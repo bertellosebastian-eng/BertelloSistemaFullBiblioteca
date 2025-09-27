@@ -1,0 +1,60 @@
+{
+  "name": "sebabiblio",
+  "version": "1.0.0",
+  "description": "Sistema de Biblioteca Escolar - Sebastián Bertello",
+  "author": {
+    "name": "Sebastián Bertello",
+    "email": "sebastian.bertello@email.com"
+  },
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --x64",
+    "dist:linux": "electron-builder --linux",
+    "dist:mac": "electron-builder --mac",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3",
+    "jest": "^30.1.3"
+  },
+  "build": {
+    "appId": "com.sebabiblio.app",
+    "productName": "SebaBiblio",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "app/**/*",
+      "consola/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "${productName}-${version}-${arch}-setup.exe"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
+      "maintainer": "Sebastián Bertello <sebastian.bertello@email.com>"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "artifactName": "${productName}-${version}-mac.${ext}"
+    },
+    "publish": []
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "node-fetch": "^3.3.2"
+  }
+}
