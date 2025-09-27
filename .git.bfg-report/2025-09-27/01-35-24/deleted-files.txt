@@ -1,0 +1,3 @@
+407e472f9218404e199c352f361f80ead5ce823a 243 TestPathPatterns.test.ts.snap
+318e849c777bc1441e0f7245d7f2f6bbf8aabf9b 88121344 sebabiblio-consola_1.0.0_amd64.snap
+8b320be95e9de072202fb46a027deb0c0e13ad4b 102809600 sebabiblio_1.0.0_amd64.snap

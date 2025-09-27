@@ -1,0 +1,3 @@
+c21a4cfe81cc88ef27a3d411d84839122628d779 417945470 SebaBiblio-1.0.0-x86_64.AppImage
+d9cc77834ff0729fa5b6b29aca9194c9b1b555a8 122398808 SebaBiblio-1.0.0.AppImage
+8d94c310ee61c2369a8a3bf09f60e7e4c45d84fa 104057513 sebabiblio-consola-1.0.0.AppImage
