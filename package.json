@@ -30,6 +30,9 @@
       "consola/**/*",
       "package.json"
     ],
+    "extraMetadata": {
+      "main": "app/main.js"
+    },
     "win": {
       "target": [
         "nsis",
