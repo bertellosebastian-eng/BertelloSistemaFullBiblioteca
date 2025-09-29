@@ -35,8 +35,8 @@
       "target": [
         "portable"
       ],
-      "artifactName": "${productName}-${version}-${arch}-portable.exe",
-      "sign": false
+  "artifactName": "${productName}-${version}-${arch}-portable.exe",
+  "sign": null
     },
     "publish": []
   },
