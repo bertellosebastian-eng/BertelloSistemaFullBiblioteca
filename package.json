@@ -23,34 +23,26 @@
     "productName": "SebaBiblio",
     "directories": {
       "output": "dist",
-      "app": "."
+      "app": "app"
     },
     "files": [
-      "**/*"
-    ],
-    "extraResources": [
-      "app/main.js"
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "assets/**",
+      "components/**",
+      "db/**",
+      "models/**",
+      "modules/**",
+      "services/**",
+      "utils/**"
     ],
     "win": {
       "target": [
-        "nsis",
         "portable"
       ],
-      "artifactName": "${productName}-${version}-${arch}-setup.exe"
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ],
-      "artifactName": "${productName}-${version}-${arch}.${ext}",
-      "maintainer": "Sebastián Bertello <sebastian.bertello@email.com>"
-    },
-    "mac": {
-      "target": [
-        "dmg"
-      ],
-      "artifactName": "${productName}-${version}-mac.${ext}"
+      "artifactName": "${productName}-${version}-${arch}-portable.exe",
+      "sign": null
     },
     "publish": []
   },
@@ -58,5 +50,5 @@
     "better-sqlite3": "^12.4.1",
     "node-fetch": "^3.3.2"
   },
-  "main": "main.js"
+  "main": "app/main.js"
 }
