@@ -2,7 +2,6 @@
   "name": "sebabiblio",
   "version": "1.0.0",
   "description": "Sistema Integral de Biblioteca Escolar",
-  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack-win": "electron-packager . SebaBiblio --platform=win32 --arch=x64 --out=dist --overwrite",
@@ -12,9 +11,42 @@
   },
   "author": "Sebastián Nelson Jesús Bertello",
   "license": "MIT",
+  "main": "main.js",
+  "build": {
+    "appId": "com.sebabiblio.app",
+    "productName": "SebaBiblio",
+    "directories": {
+      "output": "dist",
+      "app": "."
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "assets/**",
+      "components/**",
+      "db/**",
+      "models/**",
+      "modules/**",
+      "services/**",
+      "utils/**"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "artifactName": "${productName}-${version}-${arch}-portable.exe",
+      "sign": false
+    },
+    "publish": []
+  },
   "devDependencies": {
     "electron": "^28.0.0",
-    "electron-packager": "^17.1.1",
-    "electron-builder": "^24.6.0"
+    "electron-builder": "^24.6.0",
+    "electron-packager": "^17.1.1"
+  },
+  "dependencies": {
+    "jsbarcode": "^3.12.1",
+    "jspdf": "^3.0.3"
   }
 }

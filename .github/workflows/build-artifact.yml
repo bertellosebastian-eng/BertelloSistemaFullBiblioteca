@@ -1,0 +1,48 @@
+name: Build and Publish Windows Portable Artifact
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-windows-portable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies (root)
+        run: npm install
+
+      - name: Install dependencies (app)
+        run: |
+          cd app
+          npm install
+
+      - name: Install wine32 for rcedit
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install -y wine32
+
+      - name: Build Windows portable
+        run: |
+          cd app
+          npx electron-builder --win portable --x64 --ia32 --dir
+
+      - name: Zip portable build
+        run: |
+          cd app
+          zip -r ../dist/SebaBiblio-win-portable.zip dist/win-unpacked
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SebaBiblio-win-portable
+          path: dist/SebaBiblio-win-portable.zip
